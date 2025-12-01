@@ -1,8 +1,9 @@
-Intelligent Storage Location Prediction System (ISLPS)
+## Intelligent Storage Location Prediction System (ISLPS)
 
 Enterprise-ready AI system that predicts the optimal warehouse shelf location for components using demand patterns, congestion, spatial constraints & ML — with full-stack deployment (Next.js + Django + MongoDB + Docker + CI/CD).
 
-Architecture
+### Architecture
+
 flowchart TD
     U[📱 Next.js 14 UI<br/>Prediction + Analytics Dashboards] 
         -->|JWT Auth / API Calls| B{{ DRF Backend API }}
@@ -19,7 +20,8 @@ flowchart TD
         D
     end
 
-Features
+
+### Features
 
 Real ML Engine (Random Forest) with:
 
@@ -73,7 +75,7 @@ Secure
 
 JWT auth + CORS + Index-hardened DB
 
-Folder Overview
+### Folder Overview
 ISLPS/
 ├── backend/                 # Django API + ML microservice
 │   ├── api/                # CRUD endpoints
@@ -92,23 +94,23 @@ ISLPS/
 ├── ENV_SETUP.md
 └── QUICKSTART.md
 
-Quickstart
+### Quickstart
 git clone <repo-url>
 cd "Intelligent Storage Location Prediction System (ISLPS)"
 cp ENV_SETUP.md .env   # Fill environment values
 
-Train the ML Model
+### Train the ML Model
 cd ml_model/scripts
 python train_model.py
 
 
-Retrains Random Forest and stores models under ml_model/models/.
+### Retrains Random Forest and stores models under ml_model/models/.
 
 Run the Full Stack
 docker-compose up --build
 
 
-Services come alive:
+### Services come alive:
 
 Frontend: http://localhost:3000
 
@@ -118,7 +120,7 @@ Seed sample warehouse data:
 
 docker-compose exec backend python db/seeds/seed_data.py
 
-API Endpoints (Examples)
+### API Endpoints 
 
 POST /api/predict/ → Predict best shelf + reasoning
 
@@ -137,7 +139,7 @@ Backend:
 pytest
 
 
-Frontend:
+###  Frontend:
 
 npm test
 
